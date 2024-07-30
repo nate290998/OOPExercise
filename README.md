@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # oopexercise
+=======
+# OOPexercises
+>>>>>>> 64fc4245f9656cd5cda57e28b2c2fee0e57e48c4
 
 
 
@@ -15,14 +19,22 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
+<<<<<<< HEAD
 git remote add origin https://gitlab.com/basic923031/oopexercise.git
+=======
+git remote add origin https://gitlab.com/basic923031/oopexercises.git
+>>>>>>> 64fc4245f9656cd5cda57e28b2c2fee0e57e48c4
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
+<<<<<<< HEAD
 - [ ] [Set up project integrations](https://gitlab.com/basic923031/oopexercise/-/settings/integrations)
+=======
+- [ ] [Set up project integrations](https://gitlab.com/basic923031/oopexercises/-/settings/integrations)
+>>>>>>> 64fc4245f9656cd5cda57e28b2c2fee0e57e48c4
 
 ## Collaborate with your team
 
