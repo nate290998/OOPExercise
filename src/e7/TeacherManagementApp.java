@@ -2,112 +2,105 @@ package e7;
 
 import java.util.Scanner;
 
-public class TeacherManagementApp { 
+public class TeacherManagementApp {
 
- 
+	public static void main(String[] args) {
 
-	public static void main(String[] args) { 
+		Scanner scanner = new Scanner(System.in);
 
-		Scanner scanner = new Scanner(System.in); 
+		TeacherService teacherService = new TeacherService();
 
-TeacherService teacherService = new TeacherService(); 
+		while (true) {
 
- 
+			System.out.println("1. Thêm cán bộ giáo viên mới");
 
-while (true) { 
+			System.out.println("2. Xóa cán bộ giáo viên theo mã số");
 
-System.out.println("1. Thêm cán bộ giáo viên mới"); 
+			System.out.println("3. Hiển thị danh sách cán bộ giáo viên");
 
-System.out.println("2. Xóa cán bộ giáo viên theo mã số"); 
+			System.out.println("4. Thoát");
 
-System.out.println("3. Hiển thị danh sách cán bộ giáo viên"); 
+			System.out.print("Chọn chức năng: ");
 
-System.out.println("4. Thoát"); 
+			int choice = scanner.nextInt();
 
-System.out.print("Chọn chức năng: "); 
+			scanner.nextLine();
 
-int choice = scanner.nextInt(); 
+			switch (choice) {
 
-scanner.nextLine(); 
+				case 1:
 
- 
+					System.out.print("Nhập họ tên: ");
 
-switch (choice) { 
+					String hoTen = scanner.nextLine();
 
-case 1: 
+					System.out.print("Nhập tuổi: ");
 
-System.out.print("Nhập họ tên: "); 
+					int tuoi = scanner.nextInt();
 
-String hoTen = scanner.nextLine(); 
+					scanner.nextLine();
 
-System.out.print("Nhập tuổi: "); 
+					System.out.print("Nhập quê quán: ");
 
-int tuoi = scanner.nextInt(); 
+					String queQuan = scanner.nextLine();
 
-scanner.nextLine(); 
+					System.out.print("Nhập mã số giáo viên: ");
 
-System.out.print("Nhập quê quán: "); 
+					String maSoGV = scanner.nextLine();
 
-String queQuan = scanner.nextLine(); 
+					System.out.print("Nhập lương cứng: ");
 
-System.out.print("Nhập mã số giáo viên: "); 
+					double luongCung = scanner.nextDouble();
 
-String maSoGV = scanner.nextLine(); 
+					System.out.print("Nhập lương thưởng: ");
 
-System.out.print("Nhập lương cứng: "); 
+					double luongThuong = scanner.nextDouble();
 
-double luongCung = scanner.nextDouble(); 
+					System.out.print("Nhập tiền phạt: ");
 
-System.out.print("Nhập lương thưởng: "); 
+					double tienPhat = scanner.nextDouble();
 
-double luongThuong = scanner.nextDouble(); 
+					Teacher teacher = new Teacher(hoTen, tuoi, queQuan, maSoGV, luongCung, luongThuong, tienPhat,
+							luongCung + luongThuong - tienPhat);
 
-System.out.print("Nhập tiền phạt: "); 
+					teacherService.add(teacher);
 
-double tienPhat = scanner.nextDouble(); 
+					break;
 
-Teacher teacher = new Teacher(hoTen, tuoi, queQuan, maSoGV, luongCung, luongThuong, tienPhat, luongCung + luongThuong - tienPhat); 
+				case 2:
 
-teacherService.add(teacher); 
+					System.out.print("Nhập mã số giáo viên để xóa: ");
 
-break; 
+					String maSoXoa = scanner.nextLine();
 
-case 2: 
+					teacherService.deleteById(maSoXoa);
 
-System.out.print("Nhập mã số giáo viên để xóa: "); 
+					break;
 
-String maSoXoa = scanner.nextLine(); 
+				case 3:
 
-teacherService.deleteById(maSoXoa); 
+					teacherService.showInfo();
 
-break; 
+					break;
 
-case 3: 
+				case 4:
 
-	teacherService.showInfo(); 
+					System.out.println("Thoát chương trình.");
 
-	break; 
+					scanner.close();
 
-case 4: 
+					System.exit(0);
 
-System.out.println("Thoát chương trình."); 
+					break;
 
-scanner.close(); 
+				default:
 
-System.exit(0); 
+					System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
 
-break; 
+			}
 
-default: 
+		}
 
-System.out.println("Lựa chọn không hợp lệ. Vui lòng chọn lại."); 
+	}
 
-} 
-
-} 
-
-	} 
-
- 
-
-} 
+}

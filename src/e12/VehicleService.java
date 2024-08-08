@@ -11,9 +11,7 @@ public class VehicleService {
  
 
 	public VehicleService() { 
-
 		listVehicles = new ArrayList<>(); 
-
 	} 
 
 	 
@@ -41,9 +39,6 @@ public class VehicleService {
 		.filter(v -> v.getBrand().contains(userDefined) || v.getColor().contains(userDefined)) 
 
 		.collect(Collectors.toList()); 
-
-		 
-
 	} 
 
 } 

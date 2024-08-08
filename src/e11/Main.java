@@ -1,51 +1,51 @@
-package e11;
+// package e11;
 
-public class Main { 
+// public class Main { 
 
-	public static void main(String[] args) { 
+// 	public static void main(String[] args) { 
 
-// Tạo và nhập hai số phức 
+// // Tạo và nhập hai số phức 
 
-ComplexNumber sp1 = new ComplexNumber(); 
+// ComplexNumber sp1 = new ComplexNumber(); 
 
-sp1.nhapSoPhuc(); 
+// sp1.nhapSoPhuc(); 
 
-ComplexNumber sp2 = new ComplexNumber(); 
+// ComplexNumber sp2 = new ComplexNumber(); 
 
-sp2.nhapSoPhuc(); 
-
- 
-
-// Hiển thị hai số phức 
-
-System.out.println("Số phức thứ nhất: "); 
-
-sp1.hienThiSoPhuc(); 
-
-System.out.println("Số phức thứ hai: "); 
-
-sp2.hienThiSoPhuc(); 
+// sp2.nhapSoPhuc(); 
 
  
 
-// Cộng hai số phức 
+// // Hiển thị hai số phức 
 
-ComplexNumber tong = sp1.cong(sp2); 
+// System.out.println("Số phức thứ nhất: "); 
 
-System.out.println("Tổng hai số phức: "); 
+// sp1.hienThiSoPhuc(); 
 
-tong.hienThiSoPhuc(); 
+// System.out.println("Số phức thứ hai: "); 
+
+// sp2.hienThiSoPhuc(); 
 
  
 
-// Nhân hai số phức 
+// // Cộng hai số phức 
 
-ComplexNumber tich = sp1.nhan(sp2); 
+// ComplexNumber tong = sp1.cong(sp2); 
 
-System.out.println("Tích hai số phức: "); 
+// System.out.println("Tổng hai số phức: "); 
 
-tich.hienThiSoPhuc(); 
+// tong.hienThiSoPhuc(); 
 
-} 
+ 
 
-} 
+// // Nhân hai số phức 
+
+// ComplexNumber tich = sp1.nhan(sp2); 
+
+// System.out.println("Tích hai số phức: "); 
+
+// tich.hienThiSoPhuc(); 
+
+// } 
+
+// } 

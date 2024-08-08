@@ -43,61 +43,43 @@ public class VehicleManagementApp {
 				case "1":{ 
 
 					vehicleServices.addVehicle(newVehicle(scanner, "1")); 
-
 					break; 
-
 				} 
 
 				case "2":{ 
 
 					vehicleServices.addVehicle(newVehicle(scanner, "2")); 
-
 					break; 
-
 				} 
 
 				case "3":{ 
-
 					vehicleServices.addVehicle(newVehicle(scanner, "3")); 
-
 					break; 
-
 				} 
 
 				default: 
-
 					System.out.println("Not available"); 
-
 					break; 
-
 				} 
-
 				break; 
 
 			case "2": 
 
 				System.out.println("Enter ID to remove the vehicle: "); 
-
 				String id = scanner.nextLine(); 
-
 				vehicleServices.removeByID(id); 
-
 				break; 
 
 			case "3": 
 
 				System.out.println("Enter Brand or Color to find the vehicle: "); 
-
 				String userType = scanner.nextLine(); 
-
 				System.out.println(vehicleServices.findByColorBrand(userType)); 
-
 				break; 
 
 			case "4": 
 
 				System.out.println("Exit the application"); 
-
 				scanner.close(); 
 
 				System.exit(0); 
