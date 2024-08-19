@@ -1,6 +1,9 @@
 package e15.services;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,16 +33,59 @@ public class UIManager {
                 throw new IllegalArgumentException("Full Name must be between 10 and 50 characters.");
             }
 
-            System.out.print("Enter Date of Birth (dd/MM/yyyy): ");
-            String dob = scanner.nextLine();
-            // Add date format validation logic here if needed
+            String dob = null;
+            int startYear = 0;
+            double entryScore = 0.0;
 
-            System.out.print("Enter Entry Year: ");
-            int startYear = scanner.nextInt();
-            scanner.nextLine();
-            System.out.print("Enter Entry Score: ");
-            Double entryScore = scanner.nextDouble();
-            scanner.nextLine();
+            // Handle Date of Birth input with exception handling
+            while (true) {
+                try {
+                    System.out.print("Enter Date of Birth (dd/MM/yyyy): ");
+                    dob = scanner.nextLine();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    sdf.setLenient(false);
+                    sdf.parse(dob); // Try to parse the date
+                    break; // Exit loop if successful
+                } catch (ParseException e) {
+                    System.out.println("Invalid date format. Please enter the date in the format dd/MM/yyyy.");
+                }
+            }
+
+            // Handle Entry Year input with exception handling
+            while (true) {
+                try {
+                    System.out.print("Enter Entry Year: ");
+                    startYear = scanner.nextInt();
+                    scanner.nextLine();
+                    if (startYear < 1900 || startYear > 2100) { // Adjust the range as needed
+                        throw new IllegalArgumentException("Entry Year must be between 1900 and 2100.");
+                    }
+                    break; // Exit loop if successful
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a valid integer for the Entry Year.");
+                    scanner.nextLine(); // Consume the invalid input
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
+            // Handle Entry Score input with exception handling
+            while (true) {
+                try {
+                    System.out.print("Enter Entry Score: ");
+                    entryScore = scanner.nextDouble();
+                    scanner.nextLine();
+                    if (entryScore < 0.0 || entryScore > 10.0) { // Adjust the range as needed
+                        throw new IllegalArgumentException("Entry Score must be between 0.0 and 10.0.");
+                    }
+                    break; // Exit loop if successful
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a valid decimal number for the Entry Score.");
+                    scanner.nextLine(); // Consume the invalid input
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+            }
             boolean addMoreResults = true;
             while (addMoreResults) {
                 System.out.print("Enter Semester Name: ");
